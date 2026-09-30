@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "org.openarg/datos-publicos",
+  "title": "OpenArg — Argentina public data",
+  "description": "Argentina's official public data (INDEC, BCRA, 38 portals): search, read tables, cited answers.",
+  "version": "1.0.0",
+  "websiteUrl": "https://mcp.openarg.org",
+  "repository": {
+    "url": "https://github.com/colossus-lab/openarg-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://mcp.openarg.org/icon.svg",
+      "mimeType": "image/svg+xml"
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.openarg.org/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer followed by your free OpenArg key (oarg_sk_…). Get one at https://openarg.org/desarrolladores",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
