@@ -78,18 +78,19 @@ All tools are read-only. Tool names and outputs are in Spanish; ask in any langu
 | `listar_fuentes` | data | Portals covered and dataset count per portal |
 | `consultar_datos_publicos` | answers | A natural-language question answered by OpenArg, with sources and warnings |
 
-**Data mode.** Your assistant does the reasoning over the rows. It is fast (about 1 s) and allows 200 requests per day.
+**Data mode.** Your assistant does the reasoning over the rows. It is fast (about 1 s) and allows 200 requests per month.
 
-**Answers mode.** OpenArg picks the tables, cross-references them and checks the numbers against the source. It allows 10 questions per day.
+**Answers mode.** OpenArg picks the tables, cross-references them and checks the numbers against the source. It allows 10 questions per month.
 
 ## Limits
 
 | | Per key |
 |---|---|
-| Data mode | 200 requests/day, 30/min, up to 500 rows per request |
-| Answers mode | 10 questions/day, 2/min |
+| Data mode | 200 requests/month, 30/min, up to 500 rows per request |
+| Answers mode | 10 questions/month, 2/min |
+| Founders | 2,000 requests and 100 questions per month |
 
-Quotas reset at 00:00 UTC. The full table is at [mcp.openarg.org/limites.html](https://mcp.openarg.org/limites.html). OpenArg reflects what each agency publishes. The answers mode uses a language model and can be wrong, so check the linked source before publishing a figure.
+Quotas reset on the 1st of each month at 00:00 UTC. Once the monthly quota runs out, the server uses the key's credits if it has any; otherwise it answers HTTP 402 with the reset date. Founders are people who support OpenArg through [colossuslab.org/support](https://www.colossuslab.org/support). If you need more for journalism, research or an NGO and can't contribute, write to devops@colossuslab.org. The full table is at [mcp.openarg.org/limites.html](https://mcp.openarg.org/limites.html). OpenArg reflects what each agency publishes. The answers mode uses a language model and can be wrong, so check the linked source before publishing a figure.
 
 ## This repository
 
@@ -113,7 +114,7 @@ It is developed in [colossus-lab/openarg_backend](https://github.com/colossus-la
 2. Conectá `https://mcp.openarg.org/mcp` con el header `Authorization: Bearer oarg_sk_…`. Hay guías para cada cliente en [mcp.openarg.org/empezar.html](https://mcp.openarg.org/empezar.html).
 3. Preguntá: *"¿Cómo viene la tasa BADLAR en 2026?"*, *"Mostrame el gasto público por ministerio del último ejercicio"*.
 
-Hay dos modos. El **modo datos** permite 200 pedidos por día: tu asistente busca y lee las tablas. El **modo respuestas** permite 10 preguntas por día: OpenArg arma la respuesta y verifica los números.
+Hay dos modos. El **modo datos** permite 200 pedidos por mes: tu asistente busca y lee las tablas. El **modo respuestas** permite 10 preguntas por mes: OpenArg arma la respuesta y verifica los números.
 
 ## License
 
